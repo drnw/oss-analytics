@@ -3,7 +3,7 @@ import {fetchCached as fetch} from "./fetch.js";
 
 const {GITHUB_TOKEN} = process.env;
 
-if (!GITHUB_TOKEN) throw new Error("missing required GITHUB_TOKEN");
+//if (!GITHUB_TOKEN) throw new Error("missing required GITHUB_TOKEN");
 
 export async function fetchGithub(path, options) {
   return (await requestGithub(path, options)).body;
@@ -31,7 +31,7 @@ export async function requestGithub(
       headers: {
         "User-Agent": "observablehq/oss-analytics",
         "X-GitHub-Api-Version": "2022-11-28",
-        "Authorization": `token ${GITHUB_TOKEN}`,
+        //"Authorization": `token ${GITHUB_TOKEN}`,
         "Accept": accept
       }
     });
